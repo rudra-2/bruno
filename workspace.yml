@@ -1,0 +1,12 @@
+opencollection: 1.0.0
+info:
+  name: "tetrifox"
+  type: workspace
+
+collections:
+  - name: "first-collection"
+    path: "collections/first-collection"
+
+specs:
+
+docs: ''

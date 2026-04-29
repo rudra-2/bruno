@@ -1,0 +1,27 @@
+info:
+  name: Quote Processing
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{process.env.quote-processing}}/process-quotation"
+  headers:
+    - name: x-api-key
+      value: "{{process.env.xapi-quote-processing}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "subject": "Quote request Amsterdam to Brussels",
+        "email_text": "Hi, please quote shipping for 2 euro pallets (120x80x140cm, 400kg each, stackable, not dangerous) from 1012AB Amsterdam to 1000 Brussels. Pickup tomorrow, delivery next day. Thanks."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
