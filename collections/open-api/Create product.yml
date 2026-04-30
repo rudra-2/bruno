@@ -1,0 +1,35 @@
+info:
+  name: Create product
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://reqres.in/api/collections/products/records?project_id=17253
+  headers:
+    - name: x-api-key
+      value: "{{process.env.xapi-reqres}}"
+    - name: X-Reqres-Env
+      value: prod
+  params:
+    - name: project_id
+      value: "17253"
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+        "data": {
+          "name": "Wireless Headphones",
+          "price": 89.99,
+          "category": "Electronics",
+          "in_stock": true
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,21 @@
+info:
+  name: Login reqres
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: https://reqres.in/api/login
+  headers:
+    - name: x-api-key
+      value: "{{process.env.xapi-reqres}}"
+  body:
+    type: json
+    data: '{"email": "eve.holt@reqres.in", "password": "cityslicka"}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
