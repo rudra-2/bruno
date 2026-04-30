@@ -6,6 +6,8 @@ info:
 collections:
   - name: "first-collection"
     path: "collections/first-collection"
+  - name: "open-api"
+    path: "collections/open-api"
 
 specs:
 
